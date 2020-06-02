@@ -1,0 +1,2 @@
+
+-DCATKIN_DEVEL_PREFIX=/home/khaled/Project5_HomeSericeRobot/devel -DCMAKE_INSTALL_PREFIX=/home/khaled/Project5_HomeSericeRobot/install -G Unix Makefiles
