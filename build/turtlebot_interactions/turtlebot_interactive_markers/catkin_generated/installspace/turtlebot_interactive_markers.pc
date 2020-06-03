@@ -1,0 +1,8 @@
+prefix=/home/khaled/Project5_HomeSericeRobot/install
+
+Name: turtlebot_interactive_markers
+Description: Description of turtlebot_interactive_markers
+Version: 2.3.1
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 
