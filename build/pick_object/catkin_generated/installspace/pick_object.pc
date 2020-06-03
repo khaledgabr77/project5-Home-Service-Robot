@@ -1,0 +1,8 @@
+prefix=/home/khaled/Project5_HomeSericeRobot/install
+
+Name: pick_object
+Description: Description of pick_object
+Version: 0.0.0
+Cflags: 
+Libs: -L${prefix}/lib 
+Requires: 

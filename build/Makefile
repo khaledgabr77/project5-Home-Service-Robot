@@ -699,6 +699,84 @@ rosgraph_msgs_generate_messages_cpp/fast:
 .PHONY : rosgraph_msgs_generate_messages_cpp/fast
 
 #=============================================================================
+# Target rules for targets named move_base_msgs_generate_messages_nodejs
+
+# Build rule for target.
+move_base_msgs_generate_messages_nodejs: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 move_base_msgs_generate_messages_nodejs
+.PHONY : move_base_msgs_generate_messages_nodejs
+
+# fast build rule for target.
+move_base_msgs_generate_messages_nodejs/fast:
+	$(MAKE) -f pick_object/CMakeFiles/move_base_msgs_generate_messages_nodejs.dir/build.make pick_object/CMakeFiles/move_base_msgs_generate_messages_nodejs.dir/build
+.PHONY : move_base_msgs_generate_messages_nodejs/fast
+
+#=============================================================================
+# Target rules for targets named move_base_msgs_generate_messages_py
+
+# Build rule for target.
+move_base_msgs_generate_messages_py: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 move_base_msgs_generate_messages_py
+.PHONY : move_base_msgs_generate_messages_py
+
+# fast build rule for target.
+move_base_msgs_generate_messages_py/fast:
+	$(MAKE) -f pick_object/CMakeFiles/move_base_msgs_generate_messages_py.dir/build.make pick_object/CMakeFiles/move_base_msgs_generate_messages_py.dir/build
+.PHONY : move_base_msgs_generate_messages_py/fast
+
+#=============================================================================
+# Target rules for targets named move_base_msgs_generate_messages_lisp
+
+# Build rule for target.
+move_base_msgs_generate_messages_lisp: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 move_base_msgs_generate_messages_lisp
+.PHONY : move_base_msgs_generate_messages_lisp
+
+# fast build rule for target.
+move_base_msgs_generate_messages_lisp/fast:
+	$(MAKE) -f pick_object/CMakeFiles/move_base_msgs_generate_messages_lisp.dir/build.make pick_object/CMakeFiles/move_base_msgs_generate_messages_lisp.dir/build
+.PHONY : move_base_msgs_generate_messages_lisp/fast
+
+#=============================================================================
+# Target rules for targets named pick_object
+
+# Build rule for target.
+pick_object: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 pick_object
+.PHONY : pick_object
+
+# fast build rule for target.
+pick_object/fast:
+	$(MAKE) -f pick_object/CMakeFiles/pick_object.dir/build.make pick_object/CMakeFiles/pick_object.dir/build
+.PHONY : pick_object/fast
+
+#=============================================================================
+# Target rules for targets named move_base_msgs_generate_messages_cpp
+
+# Build rule for target.
+move_base_msgs_generate_messages_cpp: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 move_base_msgs_generate_messages_cpp
+.PHONY : move_base_msgs_generate_messages_cpp
+
+# fast build rule for target.
+move_base_msgs_generate_messages_cpp/fast:
+	$(MAKE) -f pick_object/CMakeFiles/move_base_msgs_generate_messages_cpp.dir/build.make pick_object/CMakeFiles/move_base_msgs_generate_messages_cpp.dir/build
+.PHONY : move_base_msgs_generate_messages_cpp/fast
+
+#=============================================================================
+# Target rules for targets named move_base_msgs_generate_messages_eus
+
+# Build rule for target.
+move_base_msgs_generate_messages_eus: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 move_base_msgs_generate_messages_eus
+.PHONY : move_base_msgs_generate_messages_eus
+
+# fast build rule for target.
+move_base_msgs_generate_messages_eus/fast:
+	$(MAKE) -f pick_object/CMakeFiles/move_base_msgs_generate_messages_eus.dir/build.make pick_object/CMakeFiles/move_base_msgs_generate_messages_eus.dir/build
+.PHONY : move_base_msgs_generate_messages_eus/fast
+
+#=============================================================================
 # Target rules for targets named _run_tests_gmapping_rostest_test_basic_localization_laser_different_beamcount.test
 
 # Build rule for target.
@@ -2520,6 +2598,12 @@ help:
 	@echo "... roscpp_generate_messages_nodejs"
 	@echo "... std_msgs_generate_messages_cpp"
 	@echo "... rosgraph_msgs_generate_messages_cpp"
+	@echo "... move_base_msgs_generate_messages_nodejs"
+	@echo "... move_base_msgs_generate_messages_py"
+	@echo "... move_base_msgs_generate_messages_lisp"
+	@echo "... pick_object"
+	@echo "... move_base_msgs_generate_messages_cpp"
+	@echo "... move_base_msgs_generate_messages_eus"
 	@echo "... _run_tests_gmapping_rostest_test_basic_localization_laser_different_beamcount.test"
 	@echo "... _run_tests_gmapping_rostest_test_basic_localization_upside_down.launch"
 	@echo "... _run_tests_gmapping_rostest_test_basic_localization_symmetry.launch"
