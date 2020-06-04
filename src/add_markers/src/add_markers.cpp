@@ -5,8 +5,8 @@
 
 double robot_x_, robot_y_;
 double DISTANCE_THRESHOLD = 0.01;
-double PICKUP_X = 7.5, PICKUP_Y = 10.0;
-double DROPOFF_X = -10.0, DROPOFF_Y = 6.0;
+double PICKUP_X = 3.0, PICKUP_Y = 5.0;
+double DROPOFF_X = -1.0, DROPOFF_Y = 0.0;
 int WAIT_TIME = 5;
 int current_wait_ = 0;
 
@@ -19,7 +19,7 @@ void robotPoseCallback(const geometry_msgs::PoseWithCovarianceStamped::ConstPtr 
 
 int main(int argc, char **argv)
 {
-  ros::init(argc, argv, "basic_shapes");
+  ros::init(argc, argv, "add_markers");
   ros::NodeHandle n;
   ros::Publisher marker_pub = n.advertise<visualization_msgs::Marker>("visualization_marker", 1);
 
@@ -127,3 +127,5 @@ int main(int argc, char **argv)
     ros::spinOnce();
   }
 }
+
+

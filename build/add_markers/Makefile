@@ -56,17 +56,27 @@ CMAKE_BINARY_DIR = /home/khaled/Project5_HomeSericeRobot/build
 #=============================================================================
 # Targets provided globally by CMake.
 
-# Special rule for the target install
-install: preinstall
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
-	/usr/bin/cmake -P cmake_install.cmake
-.PHONY : install
+# Special rule for the target edit_cache
+edit_cache:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
+	/usr/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
+.PHONY : edit_cache
 
-# Special rule for the target install
-install/fast: preinstall/fast
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
-	/usr/bin/cmake -P cmake_install.cmake
-.PHONY : install/fast
+# Special rule for the target edit_cache
+edit_cache/fast: edit_cache
+
+.PHONY : edit_cache/fast
+
+# Special rule for the target install/local
+install/local: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
+	/usr/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
+.PHONY : install/local
+
+# Special rule for the target install/local
+install/local/fast: install/local
+
+.PHONY : install/local/fast
 
 # Special rule for the target list_install_components
 list_install_components:
@@ -88,17 +98,6 @@ install/strip: preinstall
 install/strip/fast: install/strip
 
 .PHONY : install/strip/fast
-
-# Special rule for the target install/local
-install/local: preinstall
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
-	/usr/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
-.PHONY : install/local
-
-# Special rule for the target install/local
-install/local/fast: install/local
-
-.PHONY : install/local/fast
 
 # Special rule for the target rebuild_cache
 rebuild_cache:
@@ -122,16 +121,17 @@ test/fast: test
 
 .PHONY : test/fast
 
-# Special rule for the target edit_cache
-edit_cache:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
-	/usr/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
-.PHONY : edit_cache
+# Special rule for the target install
+install: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
+	/usr/bin/cmake -P cmake_install.cmake
+.PHONY : install
 
-# Special rule for the target edit_cache
-edit_cache/fast: edit_cache
-
-.PHONY : edit_cache/fast
+# Special rule for the target install
+install/fast: preinstall/fast
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
+	/usr/bin/cmake -P cmake_install.cmake
+.PHONY : install/fast
 
 # The main all target
 all: cmake_check_build_system
@@ -181,6 +181,51 @@ visualization_msgs_generate_messages_nodejs/fast:
 .PHONY : visualization_msgs_generate_messages_nodejs/fast
 
 # Convenience name for target.
+add_markers/CMakeFiles/visualization_msgs_generate_messages_lisp.dir/rule:
+	cd /home/khaled/Project5_HomeSericeRobot/build && $(MAKE) -f CMakeFiles/Makefile2 add_markers/CMakeFiles/visualization_msgs_generate_messages_lisp.dir/rule
+.PHONY : add_markers/CMakeFiles/visualization_msgs_generate_messages_lisp.dir/rule
+
+# Convenience name for target.
+visualization_msgs_generate_messages_lisp: add_markers/CMakeFiles/visualization_msgs_generate_messages_lisp.dir/rule
+
+.PHONY : visualization_msgs_generate_messages_lisp
+
+# fast build rule for target.
+visualization_msgs_generate_messages_lisp/fast:
+	cd /home/khaled/Project5_HomeSericeRobot/build && $(MAKE) -f add_markers/CMakeFiles/visualization_msgs_generate_messages_lisp.dir/build.make add_markers/CMakeFiles/visualization_msgs_generate_messages_lisp.dir/build
+.PHONY : visualization_msgs_generate_messages_lisp/fast
+
+# Convenience name for target.
+add_markers/CMakeFiles/add_markers.dir/rule:
+	cd /home/khaled/Project5_HomeSericeRobot/build && $(MAKE) -f CMakeFiles/Makefile2 add_markers/CMakeFiles/add_markers.dir/rule
+.PHONY : add_markers/CMakeFiles/add_markers.dir/rule
+
+# Convenience name for target.
+add_markers: add_markers/CMakeFiles/add_markers.dir/rule
+
+.PHONY : add_markers
+
+# fast build rule for target.
+add_markers/fast:
+	cd /home/khaled/Project5_HomeSericeRobot/build && $(MAKE) -f add_markers/CMakeFiles/add_markers.dir/build.make add_markers/CMakeFiles/add_markers.dir/build
+.PHONY : add_markers/fast
+
+# Convenience name for target.
+add_markers/CMakeFiles/nav_msgs_generate_messages_nodejs.dir/rule:
+	cd /home/khaled/Project5_HomeSericeRobot/build && $(MAKE) -f CMakeFiles/Makefile2 add_markers/CMakeFiles/nav_msgs_generate_messages_nodejs.dir/rule
+.PHONY : add_markers/CMakeFiles/nav_msgs_generate_messages_nodejs.dir/rule
+
+# Convenience name for target.
+nav_msgs_generate_messages_nodejs: add_markers/CMakeFiles/nav_msgs_generate_messages_nodejs.dir/rule
+
+.PHONY : nav_msgs_generate_messages_nodejs
+
+# fast build rule for target.
+nav_msgs_generate_messages_nodejs/fast:
+	cd /home/khaled/Project5_HomeSericeRobot/build && $(MAKE) -f add_markers/CMakeFiles/nav_msgs_generate_messages_nodejs.dir/build.make add_markers/CMakeFiles/nav_msgs_generate_messages_nodejs.dir/build
+.PHONY : nav_msgs_generate_messages_nodejs/fast
+
+# Convenience name for target.
 add_markers/CMakeFiles/visualization_msgs_generate_messages_eus.dir/rule:
 	cd /home/khaled/Project5_HomeSericeRobot/build && $(MAKE) -f CMakeFiles/Makefile2 add_markers/CMakeFiles/visualization_msgs_generate_messages_eus.dir/rule
 .PHONY : add_markers/CMakeFiles/visualization_msgs_generate_messages_eus.dir/rule
@@ -196,19 +241,19 @@ visualization_msgs_generate_messages_eus/fast:
 .PHONY : visualization_msgs_generate_messages_eus/fast
 
 # Convenience name for target.
-add_markers/CMakeFiles/visualization_msgs_generate_messages_lisp.dir/rule:
-	cd /home/khaled/Project5_HomeSericeRobot/build && $(MAKE) -f CMakeFiles/Makefile2 add_markers/CMakeFiles/visualization_msgs_generate_messages_lisp.dir/rule
-.PHONY : add_markers/CMakeFiles/visualization_msgs_generate_messages_lisp.dir/rule
+add_markers/CMakeFiles/nav_msgs_generate_messages_lisp.dir/rule:
+	cd /home/khaled/Project5_HomeSericeRobot/build && $(MAKE) -f CMakeFiles/Makefile2 add_markers/CMakeFiles/nav_msgs_generate_messages_lisp.dir/rule
+.PHONY : add_markers/CMakeFiles/nav_msgs_generate_messages_lisp.dir/rule
 
 # Convenience name for target.
-visualization_msgs_generate_messages_lisp: add_markers/CMakeFiles/visualization_msgs_generate_messages_lisp.dir/rule
+nav_msgs_generate_messages_lisp: add_markers/CMakeFiles/nav_msgs_generate_messages_lisp.dir/rule
 
-.PHONY : visualization_msgs_generate_messages_lisp
+.PHONY : nav_msgs_generate_messages_lisp
 
 # fast build rule for target.
-visualization_msgs_generate_messages_lisp/fast:
-	cd /home/khaled/Project5_HomeSericeRobot/build && $(MAKE) -f add_markers/CMakeFiles/visualization_msgs_generate_messages_lisp.dir/build.make add_markers/CMakeFiles/visualization_msgs_generate_messages_lisp.dir/build
-.PHONY : visualization_msgs_generate_messages_lisp/fast
+nav_msgs_generate_messages_lisp/fast:
+	cd /home/khaled/Project5_HomeSericeRobot/build && $(MAKE) -f add_markers/CMakeFiles/nav_msgs_generate_messages_lisp.dir/build.make add_markers/CMakeFiles/nav_msgs_generate_messages_lisp.dir/build
+.PHONY : nav_msgs_generate_messages_lisp/fast
 
 # Convenience name for target.
 add_markers/CMakeFiles/visualization_msgs_generate_messages_cpp.dir/rule:
@@ -241,19 +286,49 @@ visualization_msgs_generate_messages_py/fast:
 .PHONY : visualization_msgs_generate_messages_py/fast
 
 # Convenience name for target.
-add_markers/CMakeFiles/add_markers.dir/rule:
-	cd /home/khaled/Project5_HomeSericeRobot/build && $(MAKE) -f CMakeFiles/Makefile2 add_markers/CMakeFiles/add_markers.dir/rule
-.PHONY : add_markers/CMakeFiles/add_markers.dir/rule
+add_markers/CMakeFiles/nav_msgs_generate_messages_cpp.dir/rule:
+	cd /home/khaled/Project5_HomeSericeRobot/build && $(MAKE) -f CMakeFiles/Makefile2 add_markers/CMakeFiles/nav_msgs_generate_messages_cpp.dir/rule
+.PHONY : add_markers/CMakeFiles/nav_msgs_generate_messages_cpp.dir/rule
 
 # Convenience name for target.
-add_markers: add_markers/CMakeFiles/add_markers.dir/rule
+nav_msgs_generate_messages_cpp: add_markers/CMakeFiles/nav_msgs_generate_messages_cpp.dir/rule
 
-.PHONY : add_markers
+.PHONY : nav_msgs_generate_messages_cpp
 
 # fast build rule for target.
-add_markers/fast:
-	cd /home/khaled/Project5_HomeSericeRobot/build && $(MAKE) -f add_markers/CMakeFiles/add_markers.dir/build.make add_markers/CMakeFiles/add_markers.dir/build
-.PHONY : add_markers/fast
+nav_msgs_generate_messages_cpp/fast:
+	cd /home/khaled/Project5_HomeSericeRobot/build && $(MAKE) -f add_markers/CMakeFiles/nav_msgs_generate_messages_cpp.dir/build.make add_markers/CMakeFiles/nav_msgs_generate_messages_cpp.dir/build
+.PHONY : nav_msgs_generate_messages_cpp/fast
+
+# Convenience name for target.
+add_markers/CMakeFiles/nav_msgs_generate_messages_py.dir/rule:
+	cd /home/khaled/Project5_HomeSericeRobot/build && $(MAKE) -f CMakeFiles/Makefile2 add_markers/CMakeFiles/nav_msgs_generate_messages_py.dir/rule
+.PHONY : add_markers/CMakeFiles/nav_msgs_generate_messages_py.dir/rule
+
+# Convenience name for target.
+nav_msgs_generate_messages_py: add_markers/CMakeFiles/nav_msgs_generate_messages_py.dir/rule
+
+.PHONY : nav_msgs_generate_messages_py
+
+# fast build rule for target.
+nav_msgs_generate_messages_py/fast:
+	cd /home/khaled/Project5_HomeSericeRobot/build && $(MAKE) -f add_markers/CMakeFiles/nav_msgs_generate_messages_py.dir/build.make add_markers/CMakeFiles/nav_msgs_generate_messages_py.dir/build
+.PHONY : nav_msgs_generate_messages_py/fast
+
+# Convenience name for target.
+add_markers/CMakeFiles/nav_msgs_generate_messages_eus.dir/rule:
+	cd /home/khaled/Project5_HomeSericeRobot/build && $(MAKE) -f CMakeFiles/Makefile2 add_markers/CMakeFiles/nav_msgs_generate_messages_eus.dir/rule
+.PHONY : add_markers/CMakeFiles/nav_msgs_generate_messages_eus.dir/rule
+
+# Convenience name for target.
+nav_msgs_generate_messages_eus: add_markers/CMakeFiles/nav_msgs_generate_messages_eus.dir/rule
+
+.PHONY : nav_msgs_generate_messages_eus
+
+# fast build rule for target.
+nav_msgs_generate_messages_eus/fast:
+	cd /home/khaled/Project5_HomeSericeRobot/build && $(MAKE) -f add_markers/CMakeFiles/nav_msgs_generate_messages_eus.dir/build.make add_markers/CMakeFiles/nav_msgs_generate_messages_eus.dir/build
+.PHONY : nav_msgs_generate_messages_eus/fast
 
 src/add_markers.o: src/add_markers.cpp.o
 
@@ -288,19 +363,24 @@ help:
 	@echo "... all (the default if no target is provided)"
 	@echo "... clean"
 	@echo "... depend"
-	@echo "... install"
-	@echo "... visualization_msgs_generate_messages_nodejs"
-	@echo "... visualization_msgs_generate_messages_eus"
-	@echo "... list_install_components"
-	@echo "... visualization_msgs_generate_messages_lisp"
-	@echo "... install/strip"
+	@echo "... edit_cache"
 	@echo "... install/local"
+	@echo "... visualization_msgs_generate_messages_nodejs"
+	@echo "... list_install_components"
+	@echo "... install/strip"
+	@echo "... visualization_msgs_generate_messages_lisp"
+	@echo "... add_markers"
+	@echo "... nav_msgs_generate_messages_nodejs"
+	@echo "... visualization_msgs_generate_messages_eus"
+	@echo "... nav_msgs_generate_messages_lisp"
 	@echo "... rebuild_cache"
 	@echo "... visualization_msgs_generate_messages_cpp"
 	@echo "... visualization_msgs_generate_messages_py"
-	@echo "... add_markers"
 	@echo "... test"
-	@echo "... edit_cache"
+	@echo "... nav_msgs_generate_messages_cpp"
+	@echo "... install"
+	@echo "... nav_msgs_generate_messages_py"
+	@echo "... nav_msgs_generate_messages_eus"
 	@echo "... src/add_markers.o"
 	@echo "... src/add_markers.i"
 	@echo "... src/add_markers.s"
